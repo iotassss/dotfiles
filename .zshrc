@@ -21,7 +21,10 @@ export NVM_CD_FLAGS="-q"
 export NVM_BIN="/Users/z.yuta.ioka/.nvm/versions/node/v15.7.0/bin"
 export NVM_INC="/Users/z.yuta.ioka/.nvm/versions/node/v15.7.0/include/node"
 export GOENV_ROOT="/Users/z.yuta.ioka/.goenv"
-export GOPRIVATE="git.gree-dev.net/z-yuta-ioka/gamelib-server-go-sdk"
+export TELEPORT_AUTH="gree-sso"
+export TELEPORT_LOGIN="z-yuta-ioka"
+export TELEPORT_PROXY="teleport.security.gree-dev.net:3080"
+
 export CONDA_CHANGEPS1="false"
 
 # goenv
