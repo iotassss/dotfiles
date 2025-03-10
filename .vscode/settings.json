@@ -1,0 +1,120 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "[ruby]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[java]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "[csharp]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+    "[python]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnType": true
+    },
+    "[xml]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[css]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[scss]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[json]": {
+        "editor.tabSize": 2
+    },
+    "emmet.variables": {
+        "lang": "ja"
+    },
+    "editor.wordWrap": "on",
+    "editor.guides.bracketPairs": true,
+    "editor.formatOnPaste": true,
+    "redhat.telemetry.enabled": true,
+    "emmet.includeLanguages": {
+        "javascript": "html"
+    },
+    "workbench.editor.enablePreview": false,
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.userWords": [
+        "godotenv",
+        "goquery",
+        "gorm",
+        "Interactor",
+        "iotassss",
+        "puzzdra",
+        "usecase",
+        "Yukyu"
+    ],
+    "yaml.customTags": [
+        "!Ref",
+        "!Sub scalar",
+        "!Sub sequence",
+        "!Join sequence",
+        "!FindInMap sequence",
+        "!GetAtt scalar",
+        "!GetAtt sequence",
+        "!Base64 mapping",
+        "!GetAZs",
+        "!Select scalar",
+        "!Select sequence",
+        "!Split sequence",
+        "!ImportValue",
+        "!Condition",
+        "!Equals sequence",
+        "!And",
+        "!If",
+        "!Not",
+        "!Or",
+        "!And sequence",
+        "!If sequence",
+        "!Not sequence",
+        "!Equals",
+        "!Or sequence",
+        "!FindInMap",
+        "!Base64",
+        "!Join",
+        "!Cidr",
+        "!Sub",
+        "!GetAtt",
+        "!ImportValue sequence",
+        "!Select",
+        "!Split"
+    ],
+    "editor.rulers": [
+        100
+    ],
+}
