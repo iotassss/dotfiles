@@ -21,6 +21,8 @@ export NVM_CD_FLAGS="-q"
 export NVM_BIN="/Users/z.yuta.ioka/.nvm/versions/node/v15.7.0/bin"
 export NVM_INC="/Users/z.yuta.ioka/.nvm/versions/node/v15.7.0/include/node"
 export GOENV_ROOT="/Users/z.yuta.ioka/.goenv"
+export GOPRIVATE="git.gree-dev.net/z-yuta-ioka/gamelib-server-go-sdk,github.com/gree-main/*"
+# export GOPRIVATE=""
 export TELEPORT_AUTH="gree-sso"
 export TELEPORT_LOGIN="z-yuta-ioka"
 export TELEPORT_PROXY="teleport.security.gree-dev.net:3080"
@@ -34,7 +36,10 @@ export PATH="$HOME/.goenv/bin:$PATH"
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 # Node.js (nvm)
-export PATH="$HOME/.nvm/versions/node/v15.7.0/bin:$PATH"
+# export PATH="$HOME/.nvm/versions/node/v15.7.0/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm
 
 # rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
