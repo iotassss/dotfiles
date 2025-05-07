@@ -11,52 +11,17 @@
 git clone https://github.com/iotassss/dotfiles.git ~/dotfiles
 ```
 
-### 2. 既存の設定ファイルをバックアップ
-既存の設定ファイルがある場合は、バックアップを取ります。
-
-#### VS Code の設定ファイル
+### 2. 初期化スクリプトの実行
+スクリプトを実行して、設定を適用します。このスクリプトは以下を行います。
 ```bash
-mv ~/Library/Application\ Support/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json.bak
-mv ~/Library/Application\ Support/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json.bak
-```
-
-#### Zsh 設定ファイル
-```bash
-mv ~/.zshrc ~/.zshrc.bak
-mv ~/.zprofile ~/.zprofile.bak
-```
-
-### 3. シンボリックリンクを作成
-リポジトリ内の設定ファイルを適用するために、以下のコマンドでシンボリックリンクを作成します。
-
-#### VS Code の設定ファイル
-```bash
-ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-```
-
-#### Zsh 設定ファイル
-```bash
-ln -s ~/dotfiles/zshrc ~/.zshrc
-ln -s ~/dotfiles/zprofile ~/.zprofile
-```
-
-### 4. 設定を反映
-設定を反映するために、以下の手順を実行します。
-
-#### VS Code の設定
-VS Code を再起動し、設定が正しく適用されていることを確認してください。
-
-#### Zsh の設定
-ターミナルを再起動するか、以下のコマンドを実行します。
-```bash
+# 既存の設定ファイルをバックアップ
+# VS Code と Zsh の設定ファイルのシンボリックリンクを作成
+sh ~/dotfiles/init.sh
+# 反映
 source ~/.zshrc
-```
 
-### 5. 拡張機能のインストール
-リポジトリに含まれる拡張機能リストを使用して、必要な拡張機能を一括インストールします。
-```bash
-xargs -n 1 code --install-extension < ~/dotfiles/vscode/extensions.txt
+# (option) VS Code の拡張機能をインストールする場合
+sh ~/dotfiles/install_vscode_extensions.sh
 ```
 
 ## 注意事項

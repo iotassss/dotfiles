@@ -128,8 +128,10 @@
                 "command": "npx",
                 "args": [
                     "-y",
-                    "@modelcontextprotocol/server-filesystem",
-                    "/Users/iota/Workspace/roadmap"
+                    "@modelcontextprotocol/server-filesystem"
+                    // ここに編集可能なディレクトリを指定する
+                    // /Users/username/Workspace,
+                    // /Users/username/dotfiles
                 ]
             },
             "mcp-server-time": {
