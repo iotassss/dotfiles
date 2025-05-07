@@ -65,7 +65,7 @@
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
-        "markdown": true,
+        // "markdown": true,
         "scminput": false
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -117,4 +117,31 @@
     "editor.rulers": [
         100
     ],
+    "github.copilot.selectedCompletionModel": "",
+    "go.toolsManagement.autoUpdate": true,
+    "task.allowAutomaticTasks": "on",
+    "mcp": {
+        "inputs": [],
+        "servers": {
+            "ServerFilesystem": {
+                "type": "stdio",
+                "command": "npx",
+                "args": [
+                    "-y",
+                    "@modelcontextprotocol/server-filesystem",
+                    "/Users/iota/Workspace/roadmap"
+                ]
+            },
+            "mcp-server-time": {
+                "command": "python",
+                "args": [
+                    "-m",
+                    "mcp_server_time",
+                    "--local-timezone=America/Los_Angeles"
+                ],
+                "env": {}
+            }
+        }
+    },
+    "chat.mcp.discovery.enabled": true
 }
