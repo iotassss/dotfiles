@@ -11,10 +11,40 @@ require("config.lazy")
 -- Plugin dependent settings
 -- ----------------------------
 
+-- Goのimportを自動で整理するための関数
+local function organize_imports()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  -- 今のバッファに付いている LSP client から encoding を取る
+  local clients = vim.lsp.get_clients({ bufnr = bufnr, name = "gopls" })
+  if #clients == 0 then
+    return
+  end
+
+  local client = clients[1]
+  local params = vim.lsp.util.make_range_params(0, client.offset_encoding)
+  params.context = { only = { "source.organizeImports" } }
+
+  local result = vim.lsp.buf_request_sync(bufnr, "textDocument/codeAction", params, 3000)
+  for cid, res in pairs(result or {}) do
+    for _, action in pairs(res.result or {}) do
+      if action.edit then
+        local c = vim.lsp.get_client_by_id(cid)
+        vim.lsp.util.apply_workspace_edit(action.edit, c and c.offset_encoding or "utf-16")
+      end
+    end
+  end
+end
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
-  callback = function()
-    vim.lsp.buf.format()
+  callback = function(args)
+    organize_imports()
+    vim.lsp.buf.format({
+      bufnr = args.buf,
+      async = false,
+      name = "gopls",
+    })
   end,
 })
 
