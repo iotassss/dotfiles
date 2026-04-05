@@ -5,29 +5,6 @@
 vim.g.mapleader = " "
 
 require("options")
-
--- スペース・インデントを明示
-vim.opt.list = true
-vim.opt.listchars = {
-  tab = ">-",
-  trail = "·",
-  space = "·",
-  nbsp = "␣",
-}
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
 require("config.lazy")
 
 -- ----------------------------
@@ -54,10 +31,6 @@ vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#00ff00", bg = "#ff0000" })
 -- LSPエラー popup の文字色
 vim.api.nvim_set_hl(0, "DiagnosticFloatingError", { fg = "#ff5555" })
 vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn", { fg = "#f1fa8c" })
-
--- 行数表示
-vim.opt.number = true
-vim.opt.relativenumber = true
 
 -- VSCode風のファイルシステム表示をするための設定
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
@@ -109,6 +82,3 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-on_attach = function(bufnr)
-  print("gitsigns attached")
-end

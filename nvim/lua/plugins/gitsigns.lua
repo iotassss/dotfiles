@@ -13,7 +13,6 @@ return {
     current_line_blame = true,
 
     on_attach = function(bufnr)
-      print("gitsigns attached")
       local gs = require("gitsigns")
 
       local function map(mode, lhs, rhs, opts)
