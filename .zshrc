@@ -13,6 +13,10 @@ export PATH="$GOPATH/bin/air:$PATH"
 export PATH="/usr/local/bin/aws:$PATH"
 export PATH="$HOME/chromedriver-mac-arm64:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+export PATH="$GOENV_ROOT/shims:$PATH"
+export PATH="$PATH:/Users/iota/go/bin"
 
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
@@ -32,9 +36,13 @@ export BUN_INSTALL="$HOME/.bun"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
+# Goenv
+eval "$(goenv init -)"
+
 # Terraform autocompletion
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # Aliases
 alias ll='ls -la'
+export AWS_PROFILE=acct2647
