@@ -50,6 +50,10 @@
     "[json]": {
         "editor.tabSize": 2
     },
+    "[tmpl]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
     "emmet.variables": {
         "lang": "ja"
     },
@@ -65,7 +69,7 @@
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
-        // "markdown": true,
+        "markdown": true,
         "scminput": false
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -120,30 +124,28 @@
     "github.copilot.selectedCompletionModel": "",
     "go.toolsManagement.autoUpdate": true,
     "task.allowAutomaticTasks": "on",
-    "mcp": {
-        "inputs": [],
-        "servers": {
-            "ServerFilesystem": {
-                "type": "stdio",
-                "command": "npx",
-                "args": [
-                    "-y",
-                    "@modelcontextprotocol/server-filesystem"
-                    // ここに編集可能なディレクトリを指定する
-                    // /Users/username/Workspace,
-                    // /Users/username/dotfiles
-                ]
-            },
-            "mcp-server-time": {
-                "command": "python",
-                "args": [
-                    "-m",
-                    "mcp_server_time",
-                    "--local-timezone=America/Los_Angeles"
-                ],
-                "env": {}
-            }
-        }
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": true,
+        "windsurf": true,
+        "cursor-global": true,
+        "cursor-workspace": true
     },
-    "chat.mcp.discovery.enabled": true
+    "docker.extension.enableComposeLanguageServer": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1"
 }
