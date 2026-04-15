@@ -33,3 +33,36 @@ sh ~/dotfiles/install_vscode_extensions.sh
 ```bash
 code --list-extensions > ~/dotfiles/vscode/extensions.txt
 ```
+
+## Neovim (v0.11+) を AppImage でインストールする追加手順（WSL / Linux）
+
+```sh
+# ~/.local/bin ディレクトリを作成（なければ作る）
+mkdir -p ~/.local/bin
+
+# 作業ディレクトリを移動
+cd ~/.local/bin
+
+# Neovim の最新版 AppImage をダウンロード
+curl -LO https://github.com/neovim/neovim-releases/releases/download/v0.11.6/nvim-linux-x86_64.appimage
+
+# 実行権限を付与
+chmod u+x nvim-linux-x86_64.appimage
+
+# ファイル名を "nvim" に変更（コマンドとして使いやすくする）
+mv nvim-linux-x86_64.appimage nvim
+
+# ~/.local/bin を PATH に追加（このディレクトリのコマンドを優先して使う）
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
+# 設定を現在のシェルに反映
+source ~/.bashrc
+
+# gopls導入
+go install golang.org/x/tools/gopls@latest
+echo 'export PATH="$HOME/go/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+which gopls
+gopls version
+```
+
